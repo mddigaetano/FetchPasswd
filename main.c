@@ -20,6 +20,9 @@ int main(int argc, char** argv) {
         if(uid >= 1000 && uid<=9999)                                            //range di UID possibili per utenti umani;
             printf("%s\n",name);                                                //stampa nome utente;
     }while(!(feof(passwd)));                                                    //controllo fine file;
+    
+    if(fclose(passwd))                                                          //chiusura file;
+        exit(2);                                                                // ERROR N°2 || failed to close passwd;
 
     return (EXIT_SUCCESS);
 }
